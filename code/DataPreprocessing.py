@@ -99,14 +99,24 @@ def Preprocessing(df, cat_col_idx):
 def SplitData(df, testsize = None, seed = None):
     if testsize == None:
         raise AssertionError("Testsize must be defined.")
-    normal = df.loc[df['outcome'] == 'normal.']
-    attack = df.loc[df['outcome'] != 'normal.']
+    normal = df['outcome'] == 'normal.'
+    attack = df['outcome'] != 'normal.'
     
     df.drop(columns = 'outcome', inplace = True)
     
-    x_normal = normal.values
-    x_attack = attack.values
+    df_normal = df[normal]
+    df_attack = df[attack]
+    
+    x_normal = df_normal.values
+    x_attack = df_attack.values
     
     x_normal_train, x_normal_test = train_test_split(x_normal, test_size = testsize, random_state = seed)
     
     return x_normal_train, x_normal_test, x_attack
+
+"""
+tmp = getData('kddcup.data_10_percent.gz')
+tmp = Preprocessing(tmp, [1,2,3,6,11,20,21,41])
+
+x_normal_train, x_normal_test, x_attack = SplitData(tmp,testsize = 0.25, seed = 42)
+"""
