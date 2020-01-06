@@ -119,4 +119,5 @@ tmp = getData('kddcup.data_10_percent.gz')
 tmp = Preprocessing(tmp, [1,2,3,6,11,20,21,41])
 
 x_normal_train, x_normal_test, x_attack = SplitData(tmp,testsize = 0.25, seed = 42)
+
 """
