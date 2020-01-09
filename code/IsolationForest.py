@@ -52,7 +52,7 @@ class SimpleIsolationForest:
             pred = function(pred)
             pred = list(pred)
             
-            print('Insample Classification Result \n')
+            print('OutOfSample Classification Result \n')
             print('Normal Value: {}'.format(pred.count(0)))
             print('Anomlay Value: {}'.format(pred.count(1)))
             
@@ -61,7 +61,7 @@ class SimpleIsolationForest:
             pred = function(pred)
             pred = list(pred)
             
-            print('Insample Classification Result \n')
+            print('Anomaly Classification Result \n')
             print('Normal Value: {}'.format(pred.count(0)))
             print('Anomlay Value: {}'.format(pred.count(1)))
             

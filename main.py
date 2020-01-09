@@ -5,6 +5,7 @@ warnings.filterwarnings('ignore')
 
 from DataPreprocessing import getData, Preprocessing, SplitData
 from Autoencoder import SimpleUncompleteAutoencoder, SimpleStackedAutoencoder, SimpleDenosingAutoencoder
+from IsolationForest import SimpleIsolationForest
 
 
 df = getData('kddcup.data_10_percent.gz')
@@ -31,3 +32,9 @@ SDA.Modeling(x_normal_train, hidden_dim = 25, coding_dim = 3, batchsize = 50, va
 SDA.Prediction(x_normal_train, data_type = 'Insample')
 SDA.Prediction(x_normal_test, data_type = 'OutOfSample')
 prediction_SDA = SDA.Prediction(x_attack, data_type = 'Attack')
+
+ISF = SimpleIsolationForest(x_normal_train)
+ISF.Modeling(x_normal_train, seed = 42)
+ISF.Prediction(x_normal_train, data_type = 'Insample')
+ISF.Prediction(x_normal_test, data_type = 'OutOfSample')
+prediction_ISF = ISF.Prediction(x_attack, data_type = 'Attack')
