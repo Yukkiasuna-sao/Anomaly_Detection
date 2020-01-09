@@ -48,16 +48,22 @@ class SimpleUncompleteAutoencoder:
             pred = self.model.predict(self.test_data)
             score = np.sqrt(metrics.mean_squared_error(pred, self.test_data))
             print("Insample Normal Score (RMSE) : {}".format(score))
+            
+            return pred
         
         elif data_type == 'OutOfSample':
             pred = self.model.predict(self.test_data)
             score = np.sqrt(metrics.mean_squared_error(pred, self.test_data))
             print('Out of Sample Normal Score (RMSE) : {}'.format(score))
+            
+            return pred
         
         elif data_type == 'Attack':
             pred = self.model.predict(self.test_data)
             score = np.sqrt(metrics.mean_squared_error(pred, self.test_data))
             print('Attack Underway Score (RMSE) : {}'.format(score))
+            
+            return pred
 
 
 class SimpleStackedAutoencoder:
@@ -104,15 +110,21 @@ class SimpleStackedAutoencoder:
             score = np.sqrt(metrics.mean_squared_error(pred, self.test_data))
             print("Insample Normal Score (RMSE) : {}".format(score))
             
+            return pred
+        
         elif data_type == 'OutOfSample':
             pred = self.model.predict(self.test_data)
             score = np.sqrt(metrics.mean_squared_error(pred, self.test_data))
             print("Out of Sample Normal Score (RMSE) : {}".format(score))
             
+            return pred
+            
         elif data_type =='Attack':
             pred = self.model.predict(self.test_data)
             score = np.sqrt(metrics.mean_squared_error(pred, self.test_data))
             print("Attack Underway Score (RMSE) : {}".format(score))
+            
+            return pred
             
 
 class SimpleDenosingAutoencoder:
@@ -166,31 +178,18 @@ class SimpleDenosingAutoencoder:
             score = np.sqrt(metrics.mean_squared_error(pred, self.test_data))
             print("Insample Normal Score (RMSE) : {}".format(score))
             
+            return pred
+            
         elif data_type == 'OutOfSample':
             pred = self.model.predict(self.test_data)
             score = np.sqrt(metrics.mean_squared_error(pred, self.test_data))
             print("Out of Sample Normal Score (RMSE) : {}".format(score))
             
+            return pred
+        
         elif data_type =='Attack':
             pred = self.model.predict(self.test_data)
             score = np.sqrt(metrics.mean_squared_error(pred, self.test_data))
             print("Attack Underway Score (RMSE) : {}".format(score))
             
-        
-"""
-tmp = UncompleteAutoencoder(x_normal_train)
-tmp.Modeling(x_normal_train, 25, batchsize = 50, validation_size = 0.25)
-
-tmp.Prediction(x_normal_test, data_type = 'Insample')
-
-
-tmp = SimpleStackedAutoencoder(x_normal_train)
-tmp.Modeling(x_normal_train, hidden_dim = 25, coding_dim = 3, batchsize = 50, validation_size = 0.1)
-
-tmp.Prediction(x_attack, data_type = 'Attack')
-
-
-tmp = SimpleDenosingAutoencoder(x_normal_train)
-tmp.Modeling(x_normal_train, hidden_dim = 25, coding_dim = 3, batchsize = 50, validation_size = 0.1, denosing_type = 'Dropout')
-
-"""
+            return pred

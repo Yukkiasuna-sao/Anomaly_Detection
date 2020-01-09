@@ -113,11 +113,3 @@ def SplitData(df, testsize = None, seed = None):
     x_normal_train, x_normal_test = train_test_split(x_normal, test_size = testsize, random_state = seed)
     
     return x_normal_train, x_normal_test, x_attack
-
-"""
-tmp = getData('kddcup.data_10_percent.gz')
-tmp = Preprocessing(tmp, [1,2,3,6,11,20,21,41])
-
-x_normal_train, x_normal_test, x_attack = SplitData(tmp,testsize = 0.25, seed = 42)
-
-"""

@@ -42,3 +42,4 @@ dataset/
 *.code-workspace
 
 .ipynb_checkpoints/
+.__pycahe__/
