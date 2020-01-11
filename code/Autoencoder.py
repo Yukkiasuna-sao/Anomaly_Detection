@@ -132,7 +132,7 @@ class SimpleDenosingAutoencoder:
         self.df = df
         self.input_dim = self.df.shape[1]
         
-    def Modeling(self, train, hidden_dim = None, coding_dim = None, batchsize = None, validation_size = None, denosing_type = None):
+    def Modeling(self, train, hidden_dim = None, coding_dim = None, batchsize = None, validation_size = None, denosing_type = None, std = None):
         if hidden_dim == None:
             raise AssertionError("Hidden Layer Dimension must be defined.")
         if coding_dim == None:
@@ -169,15 +169,18 @@ class SimpleDenosingAutoencoder:
             
             if denosing_type == 'Gaussian':
                 
+                if std == None:
+                    raise AssertionError('Gaussian Noise std must be defined.')
+                
                 self.train = train
                 self.hidden_dim = hidden_dim
                 self.coding_dim = coding_dim
                 
                 model = Sequential()
-                model.add(Dense(self.hidden_dim, input_dim = self.input_dim, acitivation = 'relu'))
-                model.add(GaussianNoise(1))
-                model.add(Dense(self.coding_dim, activiation = 'relu'))
-                model.add(Dense(self.hidden_dim, acitivation = 'relu'))
+                model.add(Dense(self.hidden_dim, input_dim = self.input_dim, activation = 'relu'))
+                model.add(GaussianNoise(std))
+                model.add(Dense(self.coding_dim, activation = 'relu'))
+                model.add(Dense(self.hidden_dim, activation = 'relu'))
                 model.add(Dense(self.input_dim))
                 
                 model.compile(loss = 'mean_squared_error', optimizer = 'adam')
@@ -185,8 +188,8 @@ class SimpleDenosingAutoencoder:
                 
                 self.model = model
                 
-                self.model.fiot(train, train, batch_size = batchsize, validation_split = validation_size,
-                                verbose = 1, epoch = 50, callbacks = [EarlyStopping(monitor = 'val_loss', patience = 3)])
+                self.model.fit(train, train, batch_size = batchsize, validation_split = validation_size,
+                                verbose = 1, epochs = 50, callbacks = [EarlyStopping(monitor = 'val_loss', patience = 3)])
                 
                 gc.collect()
         
