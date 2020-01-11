@@ -19,7 +19,7 @@ class SimpleIsolationForest:
         self.train_data = train_data
         self.seed = seed
         
-        model = IsolationForest(random_state = self.seed).fit(self.train_data)
+        model = IsolationForest(random_state = self.seed).fit(self.train_data) # TO - DO: Hyperparameter Tuning
         
         self.model = model
     

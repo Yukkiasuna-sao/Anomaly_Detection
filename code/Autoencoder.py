@@ -5,7 +5,7 @@ from sklearn import metrics
 import tensorflow
 
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Activation, Dropout
+from tensorflow.keras.layers import Dense, Activation, Dropout, GaussianNoise
 from keras.callbacks import EarlyStopping
 
 import gc
@@ -164,6 +164,29 @@ class SimpleDenosingAutoencoder:
                 
                 self.model.fit(train, train, batch_size = batchsize, validation_split = validation_size,
                                verbose = 1, epochs = 50, callbacks = [EarlyStopping(monitor = 'val_loss', patience = 3)])
+                
+                gc.collect()
+            
+            if denosing_type == 'Gaussian':
+                
+                self.train = train
+                self.hidden_dim = hidden_dim
+                self.coding_dim = coding_dim
+                
+                model = Sequential()
+                model.add(Dense(self.hidden_dim, input_dim = self.input_dim, acitivation = 'relu'))
+                model.add(GaussianNoise(1))
+                model.add(Dense(self.coding_dim, activiation = 'relu'))
+                model.add(Dense(self.hidden_dim, acitivation = 'relu'))
+                model.add(Dense(self.input_dim))
+                
+                model.compile(loss = 'mean_squared_error', optimizer = 'adam')
+                print(model.summary())
+                
+                self.model = model
+                
+                self.model.fiot(train, train, batch_size = batchsize, validation_split = validation_size,
+                                verbose = 1, epoch = 50, callbacks = [EarlyStopping(monitor = 'val_loss', patience = 3)])
                 
                 gc.collect()
         
