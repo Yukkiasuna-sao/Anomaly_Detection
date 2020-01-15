@@ -1,11 +1,9 @@
-import pandas
 import numpy as np
 
 from sklearn import metrics
-import tensorflow
 
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Activation, Dropout, GaussianNoise
+from tensorflow.keras.layers import Dense, Dropout, GaussianNoise
 from keras.callbacks import EarlyStopping
 
 import gc

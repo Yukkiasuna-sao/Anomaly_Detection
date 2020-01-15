@@ -1,15 +1,19 @@
-import pandas as pd
-import numpy as np
-
-from sklearn import metrics
-from sklearn.ensemble import IsolationForest
-
-
 """
+Outlier Detection Case
+
+The training data contains outliers which are defined as observations that are far from the others. Outlier detection estimators thus try to fit the regions where the training data is the most concentrated, ignoring the deviant observations.
+
+So, The dataset must contain normal and Anomalies.
 
 TO - DO
 
+
 """
+
+
+import numpy as np
+
+from sklearn.ensemble import IsolationForest
 
 class SimpleIsolationForest:
     def __init__(self, df):

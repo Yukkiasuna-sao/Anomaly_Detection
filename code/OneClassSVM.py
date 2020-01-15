@@ -1,7 +1,14 @@
-import pandas as pd
-import numpy as np
+"""
+Novelty Detection Case
 
-from sklearn import metrics
+The training data is not polluted by outliers and we are interested in detecting whether a new observation is an outlier. In this context an outlier is also called a novelty.
+
+"""
+
+
+
+import numpy as 
+
 from sklearn.svm import  OneClassSVM
 
 class SimpleOneClassSVM:
