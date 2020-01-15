@@ -31,8 +31,8 @@ Source: [Introduction to Anomaly Detection in Python](https://blog.floydhub.com/
 
 Source: [Introduction to Anomaly Detection in Python](https://blog.floydhub.com/introduction-to-anomaly-detection-in-python/)
 
-Anomaly detection is similar to — but not entirely the same as — noise removal and novelty detection.
+Anomaly detection is similar to — but not entirely the same as — <b>noise removal</b> and <b>novelty detection</b>.
 
-Novelty detection is concerned with identifying an unobserved pattern in new observations not included in training data like a sudden interest in a new channel on YouTube during Christmas, for instance.
+<b>Novelty detection</b> is concerned with identifying an unobserved pattern in new observations not included in training data like a sudden interest in a new channel on YouTube during Christmas, for instance.
 
-Noise removal (NR) is the process of removing noise from an otherwise meaningful signal.
+<b>Noise removal (NR)</b> is the process of removing noise from an otherwise meaningful signal.
