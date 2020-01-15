@@ -6,6 +6,7 @@ warnings.filterwarnings('ignore')
 from DataPreprocessing import getData, Preprocessing, SplitData
 from Autoencoder import SimpleUncompleteAutoencoder, SimpleStackedAutoencoder, SimpleDenosingAutoencoder
 from IsolationForest import SimpleIsolationForest
+from OneClassSVM import SimpleOneClassSVM
 
 
 df = getData('kddcup.data_10_percent.gz')
@@ -44,3 +45,9 @@ ISF.Modeling(x_normal_train, seed = 42)
 ISF.Prediction(x_normal_train, data_type = 'Insample')
 ISF.Prediction(x_normal_test, data_type = 'OutOfSample')
 prediction_ISF = ISF.Prediction(x_attack, data_type = 'Attack')
+
+OCS = SimpleOneClassSVM(x_normal_train)
+OCS.Modeling(x_normal_train, seed = 42)
+OCS.Prediction(x_normal_train, data_type = 'Insample')
+OCS.Prediction(x_normal_test, data_type = 'OutOfSample')
+Prediction_OCS = OCS.Prediction(x_attack, data_type = 'Attack')

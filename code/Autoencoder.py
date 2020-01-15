@@ -167,7 +167,7 @@ class SimpleDenosingAutoencoder:
                 
                 gc.collect()
             
-            if denosing_type == 'Gaussian':
+            elif denosing_type == 'Gaussian':
                 
                 if std == None:
                     raise AssertionError('Gaussian Noise std must be defined.')
@@ -192,6 +192,7 @@ class SimpleDenosingAutoencoder:
                                 verbose = 1, epochs = 50, callbacks = [EarlyStopping(monitor = 'val_loss', patience = 3)])
                 
                 gc.collect()
+                
         
     def Prediction(self, test_data, data_type):
         self.test_data = test_data
