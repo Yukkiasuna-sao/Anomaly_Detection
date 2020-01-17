@@ -49,7 +49,7 @@ class SimpleIsolationForest:
             
             print('Insample Classification Result \n')
             print('Normal Value: {}'.format(pred.count(0)))
-            print('Anomlay Value: {}'.format(pred.count(1)))
+            print('Anomaly Value: {}'.format(pred.count(1)))
 
         elif data_type == 'OutOfSample':
             pred = self.model.predict(self.test_data)
@@ -60,18 +60,7 @@ class SimpleIsolationForest:
             print('Normal Value: {}'.format(pred.count(0)))
             print('Anomlay Value: {}'.format(pred.count(1)))
             
-        elif data_type == 'Attack':
-            pred = self.model.predict(self.test_data)
-            pred = function(pred)
-            pred = list(pred)
-            
-            print('Anomaly Classification Result \n')
-            print('Normal Value: {}'.format(pred.count(0)))
-            print('Anomlay Value: {}'.format(pred.count(1)))
-            
-            self.pred = pred
-            
-            return self.pred
+            return pred
         
             
 

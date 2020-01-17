@@ -96,20 +96,41 @@ def Preprocessing(df, cat_col_idx):
     
     return df
         
-def SplitData(df, testsize = None, seed = None):
+def SplitData(df, testsize = None, seed = None, method = None):
     if testsize == None:
         raise AssertionError("Testsize must be defined.")
-    normal = df['outcome'] == 'normal.'
-    attack = df['outcome'] != 'normal.'
+        
+    else:
+        pass
     
-    df.drop(columns = 'outcome', inplace = True)
+    if method == None:
+        raise AssertionError("Method must be defined. (Outlier | Novelty)")
+    if method == "Novelty":
+        
+        normal = df['outcome'] == 'normal.'
+        attack = df['outcome'] != 'normal.'
     
-    df_normal = df[normal]
-    df_attack = df[attack]
+        df.drop(columns = 'outcome', inplace = True)
     
-    x_normal = df_normal.values
-    x_attack = df_attack.values
+        df_normal = df[normal]
+        df_attack = df[attack]
+        
+        x_normal = df_normal.values
+        x_attack = df_attack.values
     
-    x_normal_train, x_normal_test = train_test_split(x_normal, test_size = testsize, random_state = seed)
+        x_normal_train, x_normal_test = train_test_split(x_normal, test_size = testsize, random_state = seed)
     
-    return x_normal_train, x_normal_test, x_attack
+        return x_normal_train, x_normal_test, x_attack
+    
+    elif method == "Outlier":
+        
+        train, test = train_test_split(df, test_size = testsize, random_state = seed)
+        
+        x_train = train.drop(columns = 'outcome')
+        y_train = train['outcome']
+        
+        x_test = test.drop(columns = 'outcome')
+        y_test = test['outcome']
+        
+        return x_train, x_test, y_train, y_test 
+        

@@ -4,10 +4,7 @@ Novelty Detection Case
 The training data is not polluted by outliers and we are interested in detecting whether a new observation is an outlier. In this context an outlier is also called a novelty.
 
 """
-
-
-
-import numpy as 
+import numpy as np
 
 from sklearn.svm import  OneClassSVM
 
@@ -45,7 +42,7 @@ class SimpleOneClassSVM:
             
             print('Insample Classification Result \n')
             print('Normal Value: {}'.format(pred.count(0)))
-            print('Anomlay Value: {}'.format(pred.count(1)))
+            print('Anomaly Value: {}'.format(pred.count(1)))
 
         elif data_type == 'OutOfSample':
             pred = self.model.predict(self.test_data)
@@ -54,7 +51,7 @@ class SimpleOneClassSVM:
             
             print('OutOfSample Classification Result \n')
             print('Normal Value: {}'.format(pred.count(0)))
-            print('Anomlay Value: {}'.format(pred.count(1)))
+            print('Anomaly Value: {}'.format(pred.count(1)))
             
         elif data_type == 'Attack':
             pred = self.model.predict(self.test_data)
@@ -63,7 +60,7 @@ class SimpleOneClassSVM:
             
             print('Anomaly Classification Result \n')
             print('Normal Value: {}'.format(pred.count(0)))
-            print('Anomlay Value: {}'.format(pred.count(1)))
+            print('Anomaly Value: {}'.format(pred.count(1)))
             
             self.pred = pred
             
