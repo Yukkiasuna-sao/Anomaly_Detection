@@ -52,4 +52,4 @@ x_train, x_test, y_train, y_test = SplitData(df, testsize = 0.25, seed = 42, met
 ISF = SimpleIsolationForest(x_train)
 ISF.Modeling(x_train, seed = 42)
 ISF.Prediction(x_train, data_type = 'Insample')
-ISF.Prediction(x_test, data_type = 'OutOfSample')
+Prediction_ISF = ISF.Prediction(x_test, data_type = 'OutOfSample')
