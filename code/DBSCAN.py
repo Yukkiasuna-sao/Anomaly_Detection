@@ -10,37 +10,43 @@ TO - DO
 
 """
 
-
 import numpy as np
 
-from sklearn.ensemble import IsolationForest
+from sklearn.cluster import DBSCAN
 
-class SimpleIsolationForest:
+import warnings
+warnings.filterwarnings('ignore')
+import gc
+
+class SimpleDBSCAN:
     def __init__(self, df):
         self.df = df
         
-    def Modeling(self, train_data, seed):
+    def Modeling(self, train_data, epsilon, min_samples, seed):
         self.train_data = train_data
         self.seed = seed
+        self.epsilon = epsilon
+        self.min_samples = min_samples
         
-        model = IsolationForest(random_state = self.seed).fit(self.train_data) # TO - DO: Hyperparameter Tuning
+        model = DBSCAN(eps = self.epsilon, min_samples = self.min_samples).fit(self.train_data)
         
         self.model = model
-    
+        
+        gc.collect()
     def Prediction(self, test_data, data_type):
         self.test_data = test_data
         
         def ConvertLabel(x):
             if x == -1:
                 return 1
-    
+            
             else:
                 return 0
-            
+        
         function = np.vectorize(ConvertLabel)
-            
+        
         if data_type == None:
-            raise AssertionError('Data Type must be defined.')
+            raise AssertionError('Data Type must be defined')
             
         elif data_type == 'Insample':
             pred = self.model.predict(self.test_data)
@@ -48,16 +54,16 @@ class SimpleIsolationForest:
             pred = list(pred)
             
             print('Insample Classification Result \n')
-            print('Normal Value: {}'.format(pred.count(0)))
-            print('Anomaly Value: {}'.format(pred.count(1)))
-
+            print('Normal Values : {}'.format(pred.count(0)))
+            print('Anomalies Values {}'.format(pred.count(1)))
+            
         elif data_type == 'OutOfSample':
             pred = self.model.predict(self.test_data)
             pred = function(pred)
             pred = list(pred)
             
-            print('OutOfSample Classification Result \n')
-            print('Normal Value: {}'.format(pred.count(0)))
-            print('Anomlay Value: {}'.format(pred.count(1)))
+            print('Insample Classification Result \n')
+            print('Normal Values : {}'.format(pred.count(0)))
+            print('Anomalies Values {}'.format(pred.count(1)))
             
             return pred

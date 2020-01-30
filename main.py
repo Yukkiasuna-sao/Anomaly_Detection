@@ -7,6 +7,7 @@ from DataPreprocessing import getData, Preprocessing, SplitData
 from Autoencoder import SimpleUncompleteAutoencoder, SimpleStackedAutoencoder, SimpleDenosingAutoencoder
 from IsolationForest import SimpleIsolationForest
 from OneClassSVM import SimpleOneClassSVM
+from DBSCAN import SimpleDBSCAN
 
 """ Novelty Detection """
 df = getData('kddcup.data_10_percent.gz')
@@ -47,9 +48,19 @@ OCS.Prediction(x_normal_test, data_type = 'OutOfSample')
 Prediction_OCS = OCS.Prediction(x_attack, data_type = 'Attack')
 
 """ Outlier Detection """
+df = getData('kddcup.data_10_percent.gz')
+df = Preprocessing(df, [1,2,3,6,11,20,21,41])
 
 x_train, x_test, y_train, y_test = SplitData(df, testsize = 0.25, seed = 42, method = "Outlier")
+
 ISF = SimpleIsolationForest(x_train)
 ISF.Modeling(x_train, seed = 42)
 ISF.Prediction(x_train, data_type = 'Insample')
 Prediction_ISF = ISF.Prediction(x_test, data_type = 'OutOfSample')
+
+"""
+DBS = SimpleDBSCAN(x_train)
+DBS.Modeling(x_train, epsilon = 5, min_samples = 4,seed = 42)
+DBS.Prediction(x_train, data_type = 'Insample')
+Prediction_DBS = DBS.Prediction(x_test, data_type = 'OutOfSample')
+"""
