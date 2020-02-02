@@ -25,8 +25,3 @@ def Vizif(data):
         
         axs[i].legend()
         axs[i].set_title(column)
-        
-        
-        
-        
-    
