@@ -25,3 +25,56 @@ def Vizif(data):
         
         axs[i].legend()
         axs[i].set_title(column)
+        
+
+from scipy import stats
+import matplotlib.pyplot as plt
+import matplotlib.font_manager
+
+from pyod.models.abd import ABOD
+from pyod.models.knn import KNN
+
+from pyod.utils.data import generate_data, get_outliers_inliers
+
+def pyod_vis(method, outliers_fraction = 0.1):
+    xx, yy = np.meshgrid(np.linspace(-10, 10, 200), np.linspace(-10, 10, 200))
+    X_train, Y_train = generate_data(n_train = 300, train_only = True, n_features = 2)
+    
+    outlier_fraction = outliers_fraction
+    
+    x_outliers, x_inliers = get_outliers_inliers(X_train, Y_train)
+    n_inliers = len(x_inliers)
+    n_outliers = len(x_outliers)
+    
+    if method == "ABOD":
+        classifier = {'Angle-based Outlier Detector (ABOD)' : ABOD(contamination = outlier_fraction)}
+        clf_name = classifier.keys()
+        clf = classifier.values()
+        
+        plt.figure(figsize = (10,10))
+        
+        clf.fit(X_train)
+        
+        score_pred = clf.decision_function(X_train) * -1
+        
+        y_pred = clf.predict(X_train)
+        
+        n_errors = (y_pred != Y_train).sum()
+        print('No of Errors :', clf_name, n_errors)
+        
+        threshold = stats.scoreatpercentile(score_pred, 100 * outlier_fraction)
+        
+        z = clf.decision_function(np.c_[xx.ravel(), yy.ravel()]) * -1
+        z = z.reshape(xx.shape)
+        
+        plt.contourf(xx, yy, z, levels = np.linspace(z.min(), threshold, 10) cmap = plt.cm.Blues_r )
+        
+        """TO - DO"""
+        
+        
+        
+    elif method = 'KNN':
+        classifier = {'K Nearest Neighbors' : KNN(contamination = outlier_fraction)}
+        
+        
+    
