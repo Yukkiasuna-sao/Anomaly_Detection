@@ -222,7 +222,6 @@ def pyod_vis(method, outliers_fraction = 0.1):
         
         clf.fit(X_train)
         
-        y_train_pred = clf.labels_
         y_train_scores = clf.decision_scores_
         
         plt.figure(figsize = (10,10))
@@ -233,6 +232,3 @@ def pyod_vis(method, outliers_fraction = 0.1):
         plt.figure(figsize = (10,10))
         sns.scatterplot(x = 0, y = 1, hue = y_train_scores, data = train_df, palette = 'RdBu_r')
         plt.title('Anomaly Score by 100D to 2D PCA')
-        
-pyod_vis(method = 'AutoEncoder')
-
