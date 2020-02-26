@@ -11,10 +11,15 @@ TO DO
     1.1 [What is Anomalies? # 1](https://www.notion.so/1-b978df92c1b34e768a3cb60d7bc2c7a4)
         
         - Summary & Review Report
+            - Conceptual Definition: Anomaly Detection
+            - Anomaly Detetction Characteristics
         
     1.2 [What is Anomalies? # 2](https://www.notion.so/2-d5b7ec15a01846ebab2e88bebd7638ae)
         
-        - Summary & Review Report 
+        - Summary & Review Report
+            - Anomaly Detection Technique
+                - Machine Learning Method
+                - Statistic Method
 2. Translate Anomaly Detection Kernel.......
 
 ## What Are Anomalies?
