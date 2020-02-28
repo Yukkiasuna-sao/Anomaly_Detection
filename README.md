@@ -20,6 +20,13 @@ TO DO
             - Anomaly Detection Technique
                 - Machine Learning Method
                 - Statistic Method
+  
+    1.3 [What is Anomalies? # 3](https://www.notion.so/3-1d177d5f2098402297c1b870e50f8811)
+    
+        - Summary & Review Report
+            - Anomaly Detection Technique
+                - Deep Learning Method
+                
 2. Translate Anomaly Detection Kernel.......
 
 ## What Are Anomalies?
