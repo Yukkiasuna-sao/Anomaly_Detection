@@ -1,13 +1,15 @@
 # Anomaly_Detection
 Try Anomaly Detection Implementation...
 
-Doing  
+Doing 
+
 1. Conceptual Understanding
     - [Outlier Analysis](https://www.springer.com/gp/book/9781461463955)
 
 2. Translate Anomaly Detection Kernel.......
 
 TO DO
+
 1. Study.............
 
     1.1 [What is Anomalies? # 3](https://www.notion.so/3-1d177d5f2098402297c1b870e50f8811)
@@ -20,6 +22,7 @@ TO DO
                 - STEP2. Large Dataset
                            
 DONE
+
 1.[What is Anomalies? # 1](https://www.notion.so/1-b978df92c1b34e768a3cb60d7bc2c7a4)
         
         - Summary & Review Report
