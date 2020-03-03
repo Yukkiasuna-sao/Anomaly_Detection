@@ -5,29 +5,35 @@ Doing
 1. Conceptual Understanding
     - [Outlier Analysis](https://www.springer.com/gp/book/9781461463955)
 
+2. Translate Anomaly Detection Kernel.......
+
 TO DO
 1. Study.............
 
-    1.1 [What is Anomalies? # 1](https://www.notion.so/1-b978df92c1b34e768a3cb60d7bc2c7a4)
+    1.1 [What is Anomalies? # 3](https://www.notion.so/3-1d177d5f2098402297c1b870e50f8811)
+    
+        - Summary & Review Report
+            - Anomaly Detection Technique
+                - Deep Learning Method
+            - Impelementation Anomaly Detection
+                - STEP1. Simple Dataset
+                - STEP2. Large Dataset
+                           
+DONE
+1.[What is Anomalies? # 1](https://www.notion.so/1-b978df92c1b34e768a3cb60d7bc2c7a4)
         
         - Summary & Review Report
             - Conceptual Definition: Anomaly Detection
             - Anomaly Detetction Characteristics
-        
-    1.2 [What is Anomalies? # 2](https://www.notion.so/2-d5b7ec15a01846ebab2e88bebd7638ae)
+           
+2. [What is Anomalies? # 2](https://www.notion.so/2-d5b7ec15a01846ebab2e88bebd7638ae)
         
         - Summary & Review Report
             - Anomaly Detection Technique
                 - Machine Learning Method
                 - Statistic Method
-  
-    1.3 [What is Anomalies? # 3](https://www.notion.so/3-1d177d5f2098402297c1b870e50f8811)
-    
-        - Summary & Review Report
-            - Anomaly Detection Technique
-                - Deep Learning Method
                 
-2. Translate Anomaly Detection Kernel.......
+               
 
 ## What Are Anomalies?
 
