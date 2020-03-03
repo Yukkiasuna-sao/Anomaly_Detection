@@ -28,8 +28,9 @@ DONE
         - Summary & Review Report
             - Conceptual Definition: Anomaly Detection
             - Anomaly Detetction Characteristics
-           
-2. [What is Anomalies? # 2](https://www.notion.so/2-d5b7ec15a01846ebab2e88bebd7638ae)
+
+2.[What is Anomalies? # 2](https://www.notion.so/2-d5b7ec15a01846ebab2e88bebd7638ae)
+
         
         - Summary & Review Report
             - Anomaly Detection Technique
