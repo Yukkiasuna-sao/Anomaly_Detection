@@ -7,7 +7,7 @@ from sklearn.ensemble import IsolationForest
 
 """ Single Feature """
 def Vizif(data):    
-    fig, axs = plt.subplot(5, 7, figsize = (25, 30), facecolor = 'w', edgecolor = 'k')
+    fig, axs = plt.subplots(5, 7, figsize = (25, 30), facecolor = 'w', edgecolor = 'k')
     axs = axs.ravel()
     
     for i, column in enumerate(data.columns):
