@@ -70,3 +70,7 @@ Anomaly detection is similar to — but not entirely the same as — <b>noise re
 ## Reference
 
 - [1] Liu, Fei Tony; Ting, Kai Ming; Zhou, Zhi-Hua (December 2008). "Isolation Forest". 2008 Eighth IEEE International Conference on Data Mining: 413–422. [[Paper]](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest)
+
+- [2] Zhao, Y. and Hryniewicki, M.K. XGBOD: Improving Supervised Outlier Detection with Unsupervised Representation Learning. IEEE International Joint Conference on Neural Networks, 2018. [[Paper]](https://arxiv.org/abs/1912.00290)
+
+- [3] Zhao, Y., Nasrullah, Z., Hryniewicki, M.K. and Li, Z., 2019, May. LSCP: Locally selective combination in parallel outlier ensembles. In Proceedings of the 2019 SIAM International Conference on Data Mining (SDM), pp. 585-593. Society for Industrial and Applied Mathematics.[[Paper]](https://www.researchgate.net/publication/329413676_LSCP_Locally_Selective_Combination_in_Parallel_Outlier_Ensembles)
