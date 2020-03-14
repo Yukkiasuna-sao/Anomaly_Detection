@@ -9,7 +9,7 @@ Doing
 2. Translate Anomaly Detection Kernel.......
 
 3. Reveiw Paper
-    - Isolation Forest
+    - [Isolation Forest](https://www.notion.so/What-is-Isolation-Forest-f6e88cf0ea4a4e38b0775eb575be091e)
     - XGBOD
     - LSCP
 
