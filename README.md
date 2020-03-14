@@ -8,6 +8,11 @@ Doing
 
 2. Translate Anomaly Detection Kernel.......
 
+3. Reveiw Paper
+    - Isolation Forest
+    - XGBOD
+    - LSCP
+
 TO DO
 
 1. Study.............
@@ -67,7 +72,7 @@ Anomaly detection is similar to — but not entirely the same as — <b>noise re
 
 <b>Noise removal (NR)</b> is the process of removing noise from an otherwise meaningful signal.
 
-## Review Reference
+## Reference
 
 - [1] Liu, Fei Tony; Ting, Kai Ming; Zhou, Zhi-Hua (December 2008). "Isolation Forest". 2008 Eighth IEEE International Conference on Data Mining: 413–422. [[Paper]](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf?q=isolation-forest)
 
