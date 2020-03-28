@@ -27,13 +27,13 @@ TO DO
                            
 DONE
 
-1.[What is Anomalies? # 1](https://www.notion.so/1-b978df92c1b34e768a3cb60d7bc2c7a4)
+1.[What are Anomalies? # 1](https://www.notion.so/1-b978df92c1b34e768a3cb60d7bc2c7a4)
         
         - Summary & Review Report
             - Conceptual Definition: Anomaly Detection
             - Anomaly Detetction Characteristics
 
-2.[What is Anomalies? # 2](https://www.notion.so/2-d5b7ec15a01846ebab2e88bebd7638ae)
+2.[What are Anomalies? # 2](https://www.notion.so/2-d5b7ec15a01846ebab2e88bebd7638ae)
 
         
         - Summary & Review Report
