@@ -9,7 +9,6 @@ Doing
 2. Translate Anomaly Detection Kernel.......
 
 3. Reveiw Paper
-    - [Isolation Forest](https://www.notion.so/What-is-Isolation-Forest-f6e88cf0ea4a4e38b0775eb575be091e)
     - XGBOD
     - LSCP
 
@@ -42,7 +41,8 @@ DONE
                 - Machine Learning Method
                 - Statistic Method
                 
-               
+3. Reveiw Paper
+    - [Isolation Forest](https://www.notion.so/What-is-Isolation-Forest-f6e88cf0ea4a4e38b0775eb575be091e)
 
 ## What Are Anomalies?
 
