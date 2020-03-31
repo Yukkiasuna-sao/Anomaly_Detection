@@ -9,7 +9,7 @@ Doing
 2. Translate Anomaly Detection Kernel.......
 
 3. Reveiw Paper
-    - XGBOD
+    - [XGBOD](https://www.notion.so/Anomaly-Detection-Introduction-bdbb2768f1fd4b54be1eb309311c1f24)
     - LSCP
 
 TO DO
