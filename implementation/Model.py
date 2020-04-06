@@ -50,21 +50,20 @@ class OutlierDetection:
         outlier_pred = model.predict(self.X_test)
 
         if eval_metric == 'auc':
-            print("AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred)))
+            outlier_pred_proba = model.predict_proba(self.X_test)[::, 1]
+            print("kNN AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred_proba)))
 
         elif eval_metric == 'auccracy':
-            print("Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
+            print("kNN Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
 
         elif eval_metric == 'f1':
             precision = precision_score(self.y_test, outlier_pred)
             recall = recall_score(self.y_test, outlier_pred)
             f1 = 2 * (precision * recall) / (precision + recall)
 
-            print("Precision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
+            print("kNN Precision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
 
         if return_type == 'metric':
-            outlier_pred_proba = model.predict_proba(self.X_test)[::, 1]
-
             return outlier_pred_proba
 
         elif return_type == 'anoamly':
@@ -83,17 +82,18 @@ class OutlierDetection:
         outlier_pred = model.predict(self.X_test)
 
         if eval_metric == 'auc':
-            print("AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred)))
+            outlier_pred_proba = model.predict_proba(self.X_test)[::, 1]
+            print("Local Outlier Factor AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred_proba)))
 
         elif eval_metric == 'auccracy':
-            print("Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
+            print("Local Outlier Factor Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
 
         elif eval_metric == 'f1':
             precision = precision_score(self.y_test, outlier_pred)
             recall = recall_score(self.y_test, outlier_pred)
             f1 = 2 * (precision * recall) / (precision + recall)
 
-            print("Precision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
+            print("Local Outlier Factor\nPrecision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
 
         if return_type == 'metric':
             outlier_pred_proba = model.predict_proba(self.X_test)[::, 1]
@@ -116,17 +116,18 @@ class OutlierDetection:
         outlier_pred = model.predict(self.X_test)
 
         if eval_metric == 'auc':
-            print("AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred)))
+            outlier_pred_proba = model.predict_proba(self.X_test)[::, 1]
+            print("OCSVM AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred_proba)))
 
         elif eval_metric == 'auccracy':
-            print("Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
+            print("OCSVM Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
 
         elif eval_metric == 'f1':
             precision = precision_score(self.y_test, outlier_pred)
             recall = recall_score(self.y_test, outlier_pred)
             f1 = 2 * (precision * recall) / (precision + recall)
 
-            print("Precision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
+            print("OCSVM\nPrecision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
 
         if return_type == 'metric':
             outlier_pred_proba = model.predict_proba(self.X_test)[::, 1]
@@ -147,17 +148,18 @@ class OutlierDetection:
         outlier_pred = model.predict(self.X_test)
 
         if eval_metric == 'auc':
-            print("AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred)))
+            outlier_pred_proba = model.predict_proba(self.X_test)[::, 1]
+            print("Isolation Forest AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred_proba)))
 
         elif eval_metric == 'auccracy':
-            print("Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
+            print("Isolation Forest Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
 
         elif eval_metric == 'f1':
             precision = precision_score(self.y_test, outlier_pred)
             recall = recall_score(self.y_test, outlier_pred)
             f1 = 2 * (precision * recall) / (precision + recall)
 
-            print("Precision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
+            print("Isolation Forest\nPrecision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
 
         if return_type == 'metric':
             outlier_pred_proba = model.predict_proba(self.X_test)[::, 1]
@@ -181,17 +183,18 @@ class OutlierDetection:
         outlier_pred = model.predict(self.X_test)
 
         if eval_metric == 'auc':
-            print("AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred)))
+            outlier_pred_proba = model.predict_proba(self.X_test)
+            print("XGBOD AUC Score : {}".format(roc_auc_score(self.y_test, outlier_pred_proba)))
 
         elif eval_metric == 'auccracy':
-            print("Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
-    
+            print("XGBOD Accuracy: {}%".format(accuracy_score(self.y_test, outlier_pred) * 100))
+
         elif eval_metric == 'f1':
             precision = precision_score(self.y_test, outlier_pred)
             recall = recall_score(self.y_test, outlier_pred)
             f1 = 2 * (precision * recall) / (precision + recall)
 
-            print("Precision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
+            print("XGBOD\nPrecision: {}\nRecall: {}\nF1-Score: {}".format(precision, recall, f1))
 
         if return_type == 'metric':
             outlier_pred_proba = model.predict_proba(self.X_test)
@@ -230,7 +233,6 @@ def main():
         for method, i in enumerate(methods):
             fpr, tpr, _ = roc_curve(test_data[target], eval_df[i])
             auc = roc_auc_score(test_data[target], eval_df[i])
-
             plt.plot(fpr, tpr, label = eval_df.columns[1:][method].split("_")[0].upper() + ", AUC = {}".format(round(auc,2)))
             
             plt.legend(loc = 'best')
@@ -241,9 +243,5 @@ def main():
 
 if __name__ == '__main__':
     main()
-        
-    
-
-        
 
 # %%
