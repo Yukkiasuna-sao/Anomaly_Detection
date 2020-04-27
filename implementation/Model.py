@@ -2,7 +2,6 @@
 
 import numpy as np
 import pandas as pd
-
 import matplotlib.pyplot as plt
 
 from sklearn.preprocessing import StandardScaler
@@ -239,6 +238,7 @@ def main():
             plt.xlabel("False Positive Rate(FPR)")
             plt.ylabel("True Positive Rate(TPR)")
 
+        plt.savefig('./image/comparison.png')
     roc_auc_curve(eval_df, target = 'outlier')
 
 if __name__ == '__main__':

@@ -13,7 +13,7 @@ warnings.filterwarnings('ignore')
 def disease_load(val_rate = 0.25, seed = 42, target_split = True):
     
     # Load Data
-    disease_data = pd.read_csv('../dataset/thyroid_disease/thyroid_disease.csv')
+    disease_data = pd.read_csv('./dataset/thyroid_disease/thyroid_disease.csv')
     disease_data = disease_data[['Age', 'TSH', 'T3', 'TT4', 'T4U', 'FTI', 'class']]
     disease_data['outlier'] = disease_data['class'].apply(lambda x: 0 if x == 3 else 1)
     disease_data.drop(columns = 'class', inplace = True)
