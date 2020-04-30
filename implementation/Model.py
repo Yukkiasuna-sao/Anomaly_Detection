@@ -17,7 +17,7 @@ from pyod.models.ocsvm import OCSVM
 from pyod.models.iforest import IForest
 from pyod.models.xgbod import XGBOD
 
-from loaddata import disease_load
+from loaddata import disease_load, tree_load
 
 class OutlierDetection:
     def __init__(self, data_type, target):
@@ -26,6 +26,10 @@ class OutlierDetection:
         if data_type == 'disease':
             
             train, test = disease_load(target_split = False)
+
+        elif data_type == 'forest':
+
+            train, test = tree_load(target_split = False)
 
         X_train = train.drop(columns = target)
         X_test = test.drop(columns = target)
