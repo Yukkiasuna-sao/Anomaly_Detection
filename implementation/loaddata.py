@@ -45,13 +45,12 @@ def disease_load(val_rate = 0.25, seed = 42, target_split = True):
         X_val['label'] = y_val
         
         return X_train, X_val
-"""
-def tree_load(val_rate = 0.25, seed = 42, target_split = True):
 
+def tree_load(val_rate = 0.25, seed = 42, target_split = True):
     # Load Data
     tree_data = pd.read_csv('./dataset/forest_cover_type/covtype.csv')
     label = tree_data['Cover_Type']
-    tree_data = tree_data.iloc[:, 10]
+    tree_data = tree_data.iloc[:, :10]
     tree_data['Cover_Type'] = label
     tree_data['outlier'] = tree_data['Cover_Type'].apply(lambda x: 1 if (x == 3) | (x == 4) | (x == 6) else 0)
     tree_data.drop(columns = 'Cover_Type', inplace = True)
@@ -63,7 +62,6 @@ def tree_load(val_rate = 0.25, seed = 42, target_split = True):
     idx = np.arange(data_size)
     
     split_size = int(val_rate * data_size)
-    print(split_size)
     np.random.seed(seed)
     np.random.shuffle(idx)
     
@@ -83,9 +81,3 @@ def tree_load(val_rate = 0.25, seed = 42, target_split = True):
         X_val['label'] = y_val
         
         return X_train, X_val
-
-t1, t2 = tree_load(target_split = False)
-
-print(t1.shape)
-print(t2.shape)
-"""

@@ -24,11 +24,13 @@ class OutlierDetection:
         self.scaler = StandardScaler()
 
         if data_type == 'disease':
-            
+
+            print("Loading Disease Data...")
             train, test = disease_load(target_split = False)
 
         elif data_type == 'forest':
 
+            print("Loading Forest Data...")
             train, test = tree_load(target_split = False)
 
         X_train = train.drop(columns = target)
@@ -219,7 +221,7 @@ class OutlierDetection:
             return self.y_train
 
 def main():
-    initializer = OutlierDetection(data_type = 'disease', target = 'label')
+    initializer = OutlierDetection(data_type = 'forest', target = 'label')
     
     eval_df = pd.DataFrame()
     
